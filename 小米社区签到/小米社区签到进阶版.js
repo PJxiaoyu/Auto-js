@@ -193,6 +193,7 @@ function qd() {
     　　if (len > -1) {
         　　continuousSwipe(centerX, centerY, len, centerY, 1500);
             sleep(4000);
+            var done = textContains("已签到").findOne(4000);
             if (done) {
                 log("签到完成");
                 see();
@@ -200,6 +201,7 @@ function qd() {
             continuousSwipe(centerX, centerY, len, centerY, 1500);
             log("尝试第二次签到");
             sleep(4000); 
+            var done = textContains("已签到").findOne(4000);
             if (done) {
                 log("签到完成");
                 see();
