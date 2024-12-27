@@ -5,9 +5,9 @@ const backupCloudV2TxtPath = "http://xiaoyuyu.v6.army:5244/mnts/autojs/DY/V2.txt
 const backupCloudMain2JsPath = "http://xiaoyuyu.v6.army:5244/d/mnts/autojs/DY/main2.js";
 
 // 本地文件路径
-const localV2TxtPath = "/sdcard/Download/V2.txt";
-const localVTxtPath = "/sdcard/Download/V.txt";
-const localMainJsPath = "/sdcard/Download/main.js";
+const localV2TxtPath = "./V2.txt";
+const localVTxtPath = "./V.txt";
+const localMainJsPath = "./main.js";
 
 // 下载文件函数
 function downloadFile(url, localPath) {
