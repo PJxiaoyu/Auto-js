@@ -1,8 +1,8 @@
 // 主网盘和备用网盘路径
 const mainCloudV2TxtPath = "https://raw.githubusercontent.com/PJxiaoyu/Auto-js/refs/heads/main/DY/V2.txt";
 const mainCloudMain2JsPath = "https://raw.githubusercontent.com/PJxiaoyu/Auto-js/refs/heads/main/DY/main2.js";
-const backupCloudV2TxtPath = "http://xiaoyuyu.v6.army:5244/mnts/autojs/DY/V2.txt";
-const backupCloudMain2JsPath = "http://xiaoyuyu.v6.army:5244/d/mnts/autojs/DY/main2.js";
+const backupCloudV2TxtPath = "http://xiaoyuyu.v6.army:5244/d/mnts/autojs/DY/V2.txt?sign=7t-QabLhaHjYFccSu1EZ-Qeq9AY1t58uTpgk4KGoYR8=:0";
+const backupCloudMain2JsPath = "http://xiaoyuyu.v6.army:5244/d/mnts/autojs/DY/main.js?sign=FEDKpZsyN--JkEyOsXuql5AXwr870t7hQaIiNueoNCA=:0";
 
 // 本地文件路径
 const localV2TxtPath = "./V2.txt";
