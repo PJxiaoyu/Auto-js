@@ -1,1 +1,71 @@
-let searchBox=text("\u641c\u7d22")['findOne'](0x4ba44^0x4a9cc);if(searchBox){searchBox['setText']("\u0050\u004a\u0078\u0069\u0061\u006f\u0079\u0075");sleep(0x59462^0x5978a);let result=text("\u573A\u5267\u6587uyoaix".split("").reverse().join(""))["\u0066\u0069\u006e\u0064\u004f\u006e\u0065"](0x1f6da^0x1fd62);if(result){searchBox["\u0073\u0065\u0074\u0054\u0065\u0078\u0074"]('');i=0x41479^0x41479;h=0xbe675^0xbe6f7;progressText="\u5206\u4eab";while(i<h){see();}}else{searchBox["\u0073\u0065\u0074\u0054\u0065\u0078\u0074"]("\uFF01\u8C22\u8C22,\u7528\u4F7F\u518DuyoaixJP\u4E0B\u4E00\u6CE8\u5173\u8BF7".split("").reverse().join(""));toast("\u8bf7\u5173\u6ce8\u4e00\u4e0b\u0050\u004a\u0078\u0069\u0061\u006f\u0079\u0075\u518d\u4f7f\u7528\u002c\u8c22\u8c22\uff01");}}else{toast("\u8bf7\u6253\u5f00\u8f6c\u53d1\u754c\u9762\uff01");}function see(){let _0x12ac87=text(progressText)["\u0066\u0069\u006e\u0064\u004f\u006e\u0065"](0x4cfe7^0x4ca3b);if(_0x12ac87){_0x12ac87["\u0063\u006c\u0069\u0063\u006b"]();sleep(0x382bc^0x38274);i=0x359be^0x359be;}else{log("\u8be5\u4e0b\u5212\u4e86");continuousSwipe(device['width']*(0xb5aa5^0xb5aa1)/(0x35177^0x35172),device["\u0068\u0065\u0069\u0067\u0068\u0074"]*(0xf1884^0xf1898)/(0x2fc2e^0x2fc30),device["\u0077\u0069\u0064\u0074\u0068"]*(0xdeb78^0xdeb7c)/(0x6f833^0x6f835),device['height']*(0xc64ce^0xc64c2)/(0x57d90^0x57d8e),0x7e6cb^0x7e523);_0x12ac87=textContains(progressText)['findOne'](0xa1196^0xa144a);if(_0x12ac87){_0x12ac87["\u0063\u006c\u0069\u0063\u006b"]();sleep(0x32b38^0x32bf0);i=0x930c5^0x930c5;}else{log("\u52A8\u6ED1\u6B62\u505C\uFF0C\u4EAB\u5206\u5230\u627E\u672A".split("").reverse().join(""));i=h+(0x92bfa^0x92bfb);}}}function continuousSwipe(_0x2407c3,_0x23a7da,_0x46c68f,_0x37098a,_0x591d65){var _0x20f208=0x7dd14^0x7dd70;var _0x2c36ee=(_0x46c68f-_0x2407c3)/_0x20f208;var _0x255dd1=(_0x37098a-_0x23a7da)/_0x20f208;var _0x43a6e2=_0x591d65/_0x20f208;var _0x50b9bd=[];for(var _0x1f4aaa=0x367c2^0x367c2;_0x1f4aaa<=_0x20f208;_0x1f4aaa++){var _0x5c53f1=_0x2407c3+_0x2c36ee*_0x1f4aaa+random(-(0xbbc29^0xbbc28),0x52635^0x52634);var _0x34a1da=_0x23a7da+_0x255dd1*_0x1f4aaa+random(-(0xcda6f^0xcda69),0x9f63e^0x9f638);_0x50b9bd["\u0070\u0075\u0073\u0068"]([_0x5c53f1,_0x34a1da,_0x43a6e2]);}gesture["\u0061\u0070\u0070\u006c\u0079"](null,[_0x591d65]['concat'](_0x50b9bd));}
+// 等待 "搜索" 文本框加载
+let searchBox = text("搜索").findOne(5000); // 等待 5 秒
+if (searchBox) {
+    // 将 "PJxiaoyu" 粘贴到搜索框中
+    searchBox.setText("PJxiaoyu");
+    sleep(1000); // 确保操作完成
+
+    // 查找 "xiaoyu文剧场"
+    let result = text("xiaoyu文剧场").findOne(3000); // 等待 3 秒
+    if (result) {
+        // 找到 "xiaoyu文剧场"，清空搜索框内容
+        searchBox.setText("");
+        i = 0;
+        h = 130;
+        progressText = "分享";
+
+        while (i < h) {
+        see();
+        }
+    } else {
+        // 未找到，弹出提示
+        searchBox.setText("请关注一下PJxiaoyu再使用,谢谢！");
+        toast("请关注一下PJxiaoyu再使用,谢谢！");
+    }
+} else {
+    toast("请打开转发界面！");
+}
+
+function see() {
+    // 查找包含分享文字的控件
+    let shareButton = text(progressText).findOne(1500);
+
+    if (shareButton) {
+        shareButton.click(); // 点击分享按钮
+        sleep(200);
+        i = 0; // 重置计数器
+    } else {
+        log("该下划了");
+        continuousSwipe(device.width * 4 / 5, device.height * 28 / 30, device.width * 4 / 6, device.height * 12 / 30, 1000);
+
+        // 再次查找分享按钮
+        shareButton = textContains(progressText).findOne(1500);
+
+        if (shareButton) {
+            shareButton.click();
+            sleep(200);
+            i = 0; // 重置计数器
+        } else {
+            log("未找到分享，停止滑动");
+            i = h + 1; // 跳出循环
+        }
+    }
+}
+
+function continuousSwipe(x1, y1, x2, y2, duration) {
+    var steps = 100; // 滑动步数
+    var dx = (x2 - x1) / steps;
+    var dy = (y2 - y1) / steps;
+    var stepDuration = duration / steps; // 每步持续时间
+
+    // 定义手势路径
+    var path = [];
+    for (var i = 0; i <= steps; i++) {
+        var moveX = x1 + dx * i + random(-1, 1); // 在 x 方向加入随机性
+        var moveY = y1 + dy * i + random(-6, 6); // 在 y 方向加入随机性
+        path.push([moveX, moveY, stepDuration]);
+    }
+
+    // 模拟手势操作
+    gesture.apply(null, [duration].concat(path));
+}
